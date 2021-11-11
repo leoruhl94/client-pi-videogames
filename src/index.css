@@ -1,0 +1,15 @@
+@import url("./assets/fonts/BrutalType-Medium/style.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+Html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+}

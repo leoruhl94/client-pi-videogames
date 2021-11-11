@@ -1,0 +1,133 @@
+.videogame_background {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url("../../assets/images/background_4.jpg") center center fixed no-repeat;
+  background-color: #021132;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.videogame_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  font-family: "Brutal Type";
+  padding: 6rem 10%;
+  margin: auto;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  color: #dddddd;
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+.videogame_info {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 500px;
+  padding: 1.5rem;
+  min-width: 50%;
+}
+
+.videogame_img {
+  width: 400px;
+  height: 500px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.videogame_title {
+  color: #fefefe;
+  font-size: 2.1rem;
+  margin: 1.5rem 0;
+}
+
+.videogame_released,
+.videogame_rating {
+  width: 50%;
+}
+.videogame_rating-icon {
+  color: goldenrod;
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.videogame_row {
+  display: flex;
+  flex-direction: row;
+}
+.videogame_list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.videogame_tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.videogame_tags span {
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  margin: 0 0.4rem 0.3rem 0;
+}
+
+.videogame_description_text {
+  font-size: 1.4rem;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 230px;
+
+}
+.videogame_subtitles {
+  font-family: "Roboto";
+  color: #fefefe;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.videogame_description_text::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.videogame_description_text::-webkit-scrollbar-thumb {
+  background: #292828a6;
+  border-radius: 4px;
+}
+.videogame_description_text::-webkit-scrollbar-track {
+  background: #0000005d;
+  border-radius: 4px;
+}
+
+
+@media screen and ( max-width: 700px){
+  .videogame_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem 5%;
+  }
+  .videogame_img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1000px){
+  .videogame_img {
+    width: 50%;
+  }
+  .videogame_container {
+    padding: 6rem 5%;
+  }
+}
+@media screen and ( min-width: 1000px){
+  .videogame_img {
+    width: 40%;
+  }
+}
+/* @media screen and ( min-width: 1400px){
+  .videogame_img {
+    width: 600px;
+  }
+} */

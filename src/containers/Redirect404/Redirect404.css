@@ -1,0 +1,51 @@
+.page_404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("../../assets/images/background_7.jpg") center center fixed
+    no-repeat;
+  background-color: #021132;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.page_404_number {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 20rem;
+  font-family: monospace;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+.page_404_number_status {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 20rem;
+  font-family: monospace;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.page_404_msj {
+  color: rgba(255, 255, 255, 0.589);
+  font-size: 2rem;
+  font-family: monospace;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+.page_404_link {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 5rem;
+  font-family: monospace;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  text-decoration: none;
+}
+
+.page_404_link:hover {
+  color: rgb(221, 221, 221);
+  text-shadow: 0 0 125px white, 0 0 10px rgba(255, 255, 255, 0.664);
+  font-family: monospace;
+}
