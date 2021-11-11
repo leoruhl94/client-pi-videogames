@@ -45,7 +45,7 @@ export const AddGame = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://127.0.0.1:3001/api/videogame", game)
+      .post("https://the-games-api.herokuapp.com/api/videogame", game)
       .then((id) => {
         history.push(`/detail/${id.data}`);
       })

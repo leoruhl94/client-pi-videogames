@@ -10,7 +10,7 @@ export const RESET_FILTERS = "RESET_FILTERS";
 
 export const getGenres = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/genres`)
+    fetch(`https://the-games-api.herokuapp.com/api/genres`)
       .then((res) => res.json())
       .then((genres) => {
         dispatch({
@@ -26,7 +26,7 @@ export const getGenres = () => {
 
 export const getPlatforms = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/platforms`)
+    fetch(`https://the-games-api.herokuapp.com/api/platforms`)
       .then((res) => res.json())
       .then((platforms) => {
         dispatch({
@@ -42,7 +42,7 @@ export const getPlatforms = () => {
 
 export const getVideogames = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/videogames`)
+    fetch(`https://the-games-api.herokuapp.com/api/videogames`)
       .then((res) => res.json())
       .then((videogames) => {
         dispatch({
@@ -58,7 +58,7 @@ export const getVideogames = () => {
 
 export const searchVideogames = (search) => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/videogames?name=${search}`)
+    fetch(`https://the-games-api.herokuapp.com/api/videogames?name=${search}`)
       .then((res) => res.json())
       .then((videogames) => {
         dispatch({
