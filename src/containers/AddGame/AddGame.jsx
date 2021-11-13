@@ -39,13 +39,13 @@ export const AddGame = () => {
     released: true,
     image: true,
     platforms: true,
-    genres: true,
+    genres: true
   });
 
   const onSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://the-games-api.herokuapp.com/api/videogame", game)
+      .post("http://127.0.0.1:3001/api/videogame", game)
       .then((id) => {
         history.push(`/detail/${id.data}`);
       })
@@ -106,7 +106,8 @@ export const AddGame = () => {
                   minValue="0"
                   maxValue="5"
                 />
-                <FormInputDate
+         
+               <FormInputDate
                   label="Date: "
                   name="released"
                   handler={handleOnChange}

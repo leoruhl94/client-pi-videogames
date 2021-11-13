@@ -10,7 +10,7 @@ export const GameDetail = () => {
   let history = useHistory();
   let { id } = useParams();
   useEffect(() => {
-    fetch(`http://127.0.0.1:3001/api/videogame/${id}`)
+    fetch(`https://the-games-api.herokuapp.com/api/videogame/${id}`)
       .then((res) => res.json())
       .then((game) => {
         setGame(game);

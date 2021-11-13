@@ -1,8 +1,10 @@
 import { ASC, DESC, MAYOR, MINOR, RESET } from "../constantes/constantes";
 
+export const GET_ERROR = "GET_ERROR";
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
 export const GET_PLATFORMS = "GET_PLATFORMS";
 export const GET_GENRES = "GET_GENRES";
+export const GET_FAVORITES = "GET_FAVORITES";
 export const SEARCH_VIDEOGAMES = "SEARCH_VIDEOGAMES";
 export const SORT_GAMES = "SORT_GAMES";
 export const ALL_FILTERS = "ALL_FILTERS";
@@ -10,7 +12,7 @@ export const RESET_FILTERS = "RESET_FILTERS";
 
 export const getGenres = () => {
   return function (dispatch) {
-    fetch(`https://the-games-api.herokuapp.com/api/genres`)
+    fetch(`http://127.0.0.1:3001/api/genres`)
       .then((res) => res.json())
       .then((genres) => {
         dispatch({
@@ -26,7 +28,7 @@ export const getGenres = () => {
 
 export const getPlatforms = () => {
   return function (dispatch) {
-    fetch(`https://the-games-api.herokuapp.com/api/platforms`)
+    fetch(`http://127.0.0.1:3001/api/platforms`)
       .then((res) => res.json())
       .then((platforms) => {
         dispatch({
@@ -42,12 +44,37 @@ export const getPlatforms = () => {
 
 export const getVideogames = () => {
   return function (dispatch) {
-    fetch(`https://the-games-api.herokuapp.com/api/videogames`)
+    fetch(`http://127.0.0.1:3001/api/videogames`)
       .then((res) => res.json())
       .then((videogames) => {
-        dispatch({
+        videogames[0].error
+        ? dispatch({
+          type: GET_ERROR,
+          payload: videogames[0],
+        })
+        : dispatch({
           type: GET_VIDEOGAMES,
           payload: videogames,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+};
+export const getFavorites = () => {
+  return function (dispatch) {
+    fetch(`http://127.0.0.1:3001/api/videogames`)
+      .then((res) => res.json())
+      .then((favorites) => {
+        favorites[0].error
+        ? dispatch({
+          type: GET_ERROR,
+          payload: favorites[0],
+        })
+        : dispatch({
+          type: GET_FAVORITES,
+          payload: favorites,
         });
       })
       .catch((error) => {
@@ -58,7 +85,7 @@ export const getVideogames = () => {
 
 export const searchVideogames = (search) => {
   return function (dispatch) {
-    fetch(`https://the-games-api.herokuapp.com/api/videogames?name=${search}`)
+    fetch(`http://127.0.0.1:3001/api/videogames?name=${search}`)
       .then((res) => res.json())
       .then((videogames) => {
         dispatch({

@@ -6,6 +6,8 @@ import {
   SORT_GAMES,
   RESET_FILTERS,
   ALL_FILTERS,
+  GET_ERROR,
+  GET_FAVORITES,
 } from "./actions";
 
 import {
@@ -18,6 +20,7 @@ import {
 import { sortArrayByNameOrRating } from "../functions/functions";
 
 const initialState = {
+  getError:{},
   videogames: [],
   allVideogames: [],
   filteredGames: [],
@@ -39,15 +42,27 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         genres: payload,
       };
+    case GET_ERROR:
+      return {
+        ...state,
+        getError: payload,
+      };
     case GET_PLATFORMS:
       return {
         ...state,
         platforms: payload,
       };
+    case GET_FAVORITES:
+      return {
+        ...state,
+        favGames: payload,
+        filteredFavGames: payload,
+      };
 
     case GET_VIDEOGAMES:
       return {
         ...state,
+        getError:{},
         allVideogames: payload,
         videogames: payload,
         filteredGames: payload,
@@ -124,6 +139,7 @@ const reducer = (state = initialState, { type, payload }) => {
         filterFrom: FROM_ALL,
         filters: [],
         order: ASC,
+        videogames: [...state.allVideogames],
         filteredGames: [...state.allVideogames],
         searchMsj: "",
       };

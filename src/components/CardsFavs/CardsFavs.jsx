@@ -4,14 +4,16 @@ import { GameCard } from "../GameCard/GameCard";
 import { Loading } from "../Loading/Loading";
 import { Pagination } from "../Pagination/Pagination";
 import { SearchNotFound } from "../SearchNotFound/SearchNotFound";
-import "./Cards.css";
+import "./CardsFavs.css";
 
-export const Cards = ({ items }) => {
+export const CardsFavs = ({ items }) => {
   const [searchMsj, filterNoMatch] = useSelector((state) => [
     state.searchMsj,
     state.filterNoMatch,
   ]);
-  const [currentPage, setCurrentPage] = useState([]);
+
+const [currentPage, setCurrentPage] = useState([]);
+
   return (
     <>
     <div className="cards">
