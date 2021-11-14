@@ -4,16 +4,17 @@ import Icon from "../../assets/Icon/Icon";
 import { Loading } from "../../components/Loading/Loading";
 import { Header } from "../../components/Header/Header";
 import "./GameDetail.css";
+import axios from "axios";
 
 export const GameDetail = () => {
   const [game, setGame] = useState(null);
   let history = useHistory();
   let { id } = useParams();
   useEffect(() => {
-    fetch(`https://the-games-api.herokuapp.com/api/videogame/${id}`)
-      .then((res) => res.json())
+    // axios.get(`https://the-games-api.herokuapp.com/api/videogame/${id}`)
+    axios.get(`http://127.0.0.1:3001/api/videogame/${id}`)
       .then((game) => {
-        setGame(game);
+        setGame(game.data);
       })
       .catch((err) => {
         console.error(err);

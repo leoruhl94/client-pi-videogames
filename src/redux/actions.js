@@ -1,4 +1,5 @@
 import { ASC, DESC, MAYOR, MINOR, RESET } from "../constantes/constantes";
+import axios from "axios";
 
 export const GET_ERROR = "GET_ERROR";
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
@@ -12,12 +13,11 @@ export const RESET_FILTERS = "RESET_FILTERS";
 
 export const getGenres = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/genres`)
-      .then((res) => res.json())
+    axios.get(`http://127.0.0.1:3001/api/genres`)
       .then((genres) => {
         dispatch({
           type: GET_GENRES,
-          payload: genres,
+          payload: genres.data,
         });
       })
       .catch((error) => {
@@ -28,12 +28,11 @@ export const getGenres = () => {
 
 export const getPlatforms = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/platforms`)
-      .then((res) => res.json())
+    axios.get(`http://127.0.0.1:3001/api/platforms`)
       .then((platforms) => {
         dispatch({
           type: GET_PLATFORMS,
-          payload: platforms,
+          payload: platforms.data,
         });
       })
       .catch((error) => {
@@ -44,33 +43,32 @@ export const getPlatforms = () => {
 
 export const getVideogames = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/videogames`)
-      .then((res) => res.json())
+    axios.get(`http://127.0.0.1:3001/api/videogames`)
       .then((videogames) => {
-        videogames[0].error
+        console.log(videogames)
+        videogames.error
         ? dispatch({
           type: GET_ERROR,
-          payload: videogames[0],
+          payload: videogames,
         })
         : dispatch({
           type: GET_VIDEOGAMES,
-          payload: videogames,
+          payload: videogames.data,
         });
       })
       .catch((error) => {
-        console.error(error);
+        console.error("SOY EL ERRROOOOOOORRRR",error);
       });
   };
 };
 export const getFavorites = () => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/videogames`)
-      .then((res) => res.json())
+    axios.get(`http://127.0.0.1:3001/api/videogames`)
       .then((favorites) => {
-        favorites[0].error
+        favorites.error
         ? dispatch({
           type: GET_ERROR,
-          payload: favorites[0],
+          payload: favorites,
         })
         : dispatch({
           type: GET_FAVORITES,
@@ -85,9 +83,8 @@ export const getFavorites = () => {
 
 export const searchVideogames = (search) => {
   return function (dispatch) {
-    fetch(`http://127.0.0.1:3001/api/videogames?name=${search}`)
-      .then((res) => res.json())
-      .then((videogames) => {
+    axios.get(`http://127.0.0.1:3001/api/videogames?name=${search}`)
+       .then((videogames) => {
         dispatch({
           type: SEARCH_VIDEOGAMES,
           payload: videogames,

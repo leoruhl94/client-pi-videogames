@@ -14,7 +14,6 @@ export const WidgetFilterGenres = () => {
   const dispatch = useDispatch();
   const [items, setItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
-
   useEffect(() => {
     !genres.length && dispatch(getGenres());
     !filters.length && setItems(genres);
