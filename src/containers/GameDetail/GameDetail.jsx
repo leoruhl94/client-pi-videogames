@@ -11,8 +11,8 @@ export const GameDetail = () => {
   let history = useHistory();
   let { id } = useParams();
   useEffect(() => {
-    // axios.get(`https://the-games-api.herokuapp.com/api/videogame/${id}`)
-    axios.get(`http://127.0.0.1:3001/api/videogame/${id}`)
+    // axios.get(`http://127.0.0.1:3001/api/videogame/${id}`)
+    axios.get(`https://the-games-api.herokuapp.com/api/videogame/${id}`)
       .then((game) => {
         setGame(game.data);
       })
