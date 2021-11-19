@@ -14,7 +14,7 @@ export const RESET_FILTERS = "RESET_FILTERS";
 export const getGenres = () => {
   return function (dispatch) {
     // axios.get(`http://127.0.0.1:3001/api/genres`)
-    axios.get(`https://the-games.herokuapp.com/api/genres`)
+    axios.get(`https://the-games-api.herokuapp.com/api/genres`)
       .then((genres) => {
         dispatch({
           type: GET_GENRES,
@@ -30,7 +30,7 @@ export const getGenres = () => {
 export const getPlatforms = () => {
   return function (dispatch) {
     // axios.get(`http://127.0.0.1:3001/api/platforms`)
-    axios.get(`https://the-games.herokuapp.com/api/platforms`)
+    axios.get(`https://the-games-api.herokuapp.com/api/platforms`)
       .then((platforms) => {
         dispatch({
           type: GET_PLATFORMS,
@@ -46,7 +46,7 @@ export const getPlatforms = () => {
 export const getVideogames = () => {
   return function (dispatch) {
     // axios.get(`http://127.0.0.1:3001/api/videogames`)
-    axios.get(`https://the-games.herokuapp.com/api/videogames`)
+    axios.get(`https://the-games-api.herokuapp.com/api/videogames`)
       .then((videogames) => {
         console.log(videogames)
         videogames.error
@@ -67,7 +67,7 @@ export const getVideogames = () => {
 export const getFavorites = () => {
   return function (dispatch) {
     // axios.get(`http://127.0.0.1:3001/api/videogames`)
-    axios.get(`https://the-games.herokuapp.com/api/videogames`)
+    axios.get(`https://the-games-api.herokuapp.com/api/videogames`)
       .then((favorites) => {
         favorites.error
         ? dispatch({
@@ -88,7 +88,7 @@ export const getFavorites = () => {
 export const searchVideogames = (search) => {
   return function (dispatch) {
     // axios.get(`http://127.0.0.1:3001/api/videogames?name=${search}`)
-    axios.get(`https://the-games.herokuapp.com/api/videogames?name=${search}`)
+    axios.get(`https://the-games-api.herokuapp.com/api/videogames?name=${search}`)
        .then((videogames) => {
         dispatch({
           type: SEARCH_VIDEOGAMES,
