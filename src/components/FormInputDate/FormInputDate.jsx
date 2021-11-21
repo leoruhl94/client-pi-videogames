@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./FormInputDate.css";
 
 export const FormInputDate = ({
+  classes,
   label,
   name,
   validation,
@@ -25,7 +26,7 @@ export const FormInputDate = ({
   };
 
   return (
-    <div className="input-date-component">
+    <div className={`input-date-component ${classes}`}>
       <label htmlFor={name}>
         {label}{" "}
         {state.error && <span className="text_error">{state.msjError}</span>}

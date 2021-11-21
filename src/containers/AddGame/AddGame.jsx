@@ -39,7 +39,7 @@ export const AddGame = () => {
     released: true,
     image: true,
     platforms: true,
-    genres: true
+    genres: true,
   });
 
   const onSubmit = (e) => {
@@ -79,103 +79,112 @@ export const AddGame = () => {
 
   return (
     <div className="addGame_background">
-      <div className="addGame">
-        <form onSubmit={onSubmit} className="addGame_form">
-          <Link to="/home" className="addGame_goback">
-            <Icon svg="xCircle" title="xCircle" />
-          </Link>
-          <h2 className="addGame_title">Add a New Game!!</h2>
-          <div className="flex_row">
-            <div className="flex_column addGame_inputs">
-              <FormInputText
-                label="Name: "
-                name="name"
-                placeholder="Assassin's Creed"
-                handler={handleOnChange}
-                msjError="Required"
-                validation={validateText}
-              />
-              <div className="flex_row addGame_rating_date">
-                <FormInputNumber
-                  label="Rating: "
-                  name="rating"
-                  placeholder="0 - 5"
-                  handler={handleOnChange}
-                  msjError="Required"
-                  validation={validateRating}
-                  step="0.05"
-                  minValue="0"
-                  maxValue="5"
-                />
-         
-               <FormInputDate
-                  label="Date: "
-                  name="released"
+      <div className="background_blur">
+        <div className="addGame">
+          <form onSubmit={onSubmit} className="addGame_form">
+            <Link to="/home" className="addGame_goback">
+              <Icon svg="xCircle" title="xCircle" />
+            </Link>
+            <h2 className="addGame_title">Add a New Game!!</h2>
+            <div className="addGame_section1">
+              <div className="addGame_inputs">
+                <FormInputText
+                  label="Name: "
+                  name="name"
+                  placeholder="Assassin's Creed"
                   handler={handleOnChange}
                   msjError="Required"
                   validation={validateText}
-                  max={getActualDate()}
+                />
+                <div className="addGame_rating_date">
+                  <FormInputNumber
+                    classes="addGame_rating"
+                    label="Rating: "
+                    name="rating"
+                    placeholder="0 - 5"
+                    handler={handleOnChange}
+                    msjError="Required"
+                    validation={validateRating}
+                    step="0.05"
+                    minValue="0"
+                    maxValue="5"
+                  />
+
+                  <FormInputDate
+                    classes="addGame_date"
+                    label="Date: "
+                    name="released"
+                    handler={handleOnChange}
+                    msjError="Required"
+                    validation={validateText}
+                    max={getActualDate()}
+                  />
+                </div>
+                <FormInputText
+                  label="Image URL: "
+                  name="image"
+                  placeholder="http://www.image...."
+                  handler={handleOnChange}
+                  msjError="URL no valida"
+                  validation={validateUrl}
+                />
+                <div className="addGame_preview_image_1">
+                  {game.image && <img src={game.image} alt="" />}
+                </div>
+                <FormInputTextArea
+                  label="Description: "
+                  name="description"
+                  placeholder="Añande una descripcion aqui..."
+                  handler={handleOnChange}
+                  msjError="Required"
+                  validation={validateText}
+                  rows="10"
+                  cols="100"
                 />
               </div>
-              <FormInputText
-                label="Image URL: "
-                name="image"
-                placeholder="http://www.image...."
+
+              <div className="addGame_preview_image_2">
+                {game.image && <img src={game.image} alt="" />}
+              </div>
+            </div>
+
+            <div className="addGame_filters">
+              <FormListOptions
+                classes="addGame_filter_input"
+                dropdown="Genres"
+                name="genres"
+                options={genres}
+                msjError="required options"
                 handler={handleOnChange}
-                msjError="URL no valida"
-                validation={validateUrl}
+                validation={validateOptions}
               />
-              <FormInputTextArea
-                label="Description: "
-                name="description"
-                placeholder="Añande una descripcion aqui..."
+              <FormListOptions
+                classes="addGame_filter_input"
+                dropdown="Platforms"
+                name="platforms"
+                options={platforms}
+                msjError="required options"
                 handler={handleOnChange}
-                msjError="Required"
-                validation={validateText}
-                rows="10"
-                cols="100"
+                validation={validateOptions}
               />
             </div>
 
-            <div className="addGame_preview_image">
-              {game.image && <img src={game.image} alt="" />}
+            <div className="addgames_btn">
+              <button
+                className={
+                  !handleErrors(error)
+                    ? "addgames_btn_disabled"
+                    : "addgames_btn_send"
+                }
+                type="submit"
+                value="Send"
+                disabled={!handleErrors(error)}
+              >
+                Add Game
+              </button>
             </div>
-          </div>
-
-          <div className="flex_row addGame_filters">
-            <FormListOptions
-              dropdown="Genres"
-              name="genres"
-              options={genres}
-              msjError="required options"
-              handler={handleOnChange}
-              validation={validateOptions}
-            />
-            <FormListOptions
-              dropdown="Platforms"
-              name="platforms"
-              options={platforms}
-              msjError="required options"
-              handler={handleOnChange}
-              validation={validateOptions}
-            />
-          </div>
-
-          <div className="flex_row addgames_btn">
-            <button
-              className={
-                !handleErrors(error)
-                  ? "addgames_btn_disabled"
-                  : "addgames_btn_send"
-              }
-              type="submit"
-              value="Send"
-              disabled={!handleErrors(error)}
-            >
-              Add Game
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );

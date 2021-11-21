@@ -11,11 +11,8 @@
   display: flex;
   justify-content: center;
   font-family: "Brutal Type";
-  width: 100%;
-  backdrop-filter: blur(6px);
   color: #dddddd;
   font-size: 1.6rem;
-  min-height: 100vh;
 }
 .addGame_goback {
   position: absolute;
@@ -36,16 +33,8 @@
   margin: 2rem;
   padding: 2rem 3rem;
   background-color: rgba(0, 0, 0, 0.226);
-  max-width: 630px;
+  max-width: 690px;
   position: relative;
-}
-.flex_row {
-  display: flex;
-  flex-direction: row;
-}
-.flex_column {
-  display: flex;
-  flex-direction: column;
 }
 
 .addGame_title {
@@ -54,17 +43,21 @@
   font-family: "Roboto";
 }
 .addGame_inputs {
+  display: flex;
+  flex-direction: column;
   padding-right: 2rem;
 }
 
-.addGame_preview_image {
+.addGame_preview_image_1,
+.addGame_preview_image_2 {
   min-width: 25rem;
   height: 30rem;
   border-radius: 1.5rem;
   margin-top: 3.3rem;
   border: 0.2px solid #00030346;
 }
-.addGame_preview_image img {
+
+.addGame_preview_image_2 img {
   width: 25rem;
   height: 30rem;
   -o-object-fit: cover;
@@ -74,9 +67,25 @@
 
 .addGame_rating_date {
   width: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
+.addGame_date,
+.addGame_rating {
+  display: flex;
+  justify-content: start;
+}
+.addGame_rating {
+  width: 50%;
+}
+.addGame_date {
+  width: 50%;
+}
+
 .addGame_filters {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
@@ -106,4 +115,89 @@
   height: 50px;
   margin: 10px 0;
   border: 2px solid #858585;
+}
+.addGame_section1 {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 720px) {
+  .addGame_form {
+    min-width: 300px;
+  }
+  .addGame_inputs {
+    padding-right: 0;
+  }
+  .addGame_preview_image_2 {
+    display: none;
+  }
+  .addGame_preview_image_1 img {
+    min-width: 25rem;
+    max-width: 100%;
+    height: 35rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 1.5rem;
+  }
+  .addGame .addGame_preview_image_1 {
+    max-width: 100%;
+    height: 35rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .addGame_section1 {
+    flex-direction: column;
+  }
+
+  .addGame_rating {
+    width: 40%;
+  }
+  .addGame_date {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .addGame_rating_date,
+  .addGame_filters {
+    flex-direction: column;
+  }
+  .addGame_filters .addGame_filter_input {
+    width: 100%;
+  }
+  .addGame_inputs {
+    padding-right: 0;
+  }
+
+  .addGame_goback {
+    right: 2rem;
+    top: 2.2rem;
+  }
+
+  .addGame_form .addGame_rating {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .addGame_form .addGame_rating input {
+    width: 60%;
+  }
+  .addGame_form .addGame_date {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .addGame_form .addGame_date input {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 721px) {
+  .addGame_preview_image_1 {
+    display: none;
+  }
+  .addGame_form {
+    margin-top: 5rem;
+  }
 }

@@ -4,6 +4,7 @@ import { OptionItem } from "../OptionItem/OptionItem";
 import "./FormListOptions.css";
 
 export const FormListOptions = ({
+  classes,
   options,
   handler,
   title,
@@ -42,7 +43,7 @@ export const FormListOptions = ({
   };
 
   return (
-    <div className="form-list-options">
+    <div className={`form-list-options ${classes}`}>
       <h3>{title}</h3>
 
       <div className="dropdown">

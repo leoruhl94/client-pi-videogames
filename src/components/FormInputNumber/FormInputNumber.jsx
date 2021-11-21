@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./FormInputNumber.css";
 
 export const FormInputNumber = ({
+  classes,
   label,
   name,
   placeholder,
@@ -26,7 +27,7 @@ export const FormInputNumber = ({
   };
 
   return (
-    <div className="input-number-component">
+    <div className={`input-number-component ${classes}`}>
       <label htmlFor={name}>
         {label}
         {state.error && <span className="text_error">{state.msjError}</span>}
