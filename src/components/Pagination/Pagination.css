@@ -1,29 +1,43 @@
 .pagination {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1rem 2.5rem;
-    width: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 2.5rem;
+  width: fit-content;
 }
 
 .pagination .page_btn {
-    background-color: rgba(255, 255, 255, 0.062);
-    border-radius: 25px;
-    color: white;
-    cursor: pointer;
-    font-size: 1.8rem;
-    font-weight: bold;
-    padding: 0.5rem 1.5rem;
-    height: 40px;
-    margin: 5px ;
-    border: none;
-    outline: none;
+  background-color: rgba(255, 255, 255, 0.062);
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  outline: none;
 }
 .pagination .page_btn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #05dbf2;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #05dbf2;
 }
 
-.pagination .page_btn_active{
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #05dbf2;
- }
+.pagination .page_btn_active {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #05dbf2;
+}
+
+@media only screen and (max-width: 410px) {
+  .pagination .page_btn {
+    margin: 0.2rem;
+    padding: 0.5rem 1.2rem;
+    height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .pagination {
+    padding: 0 0.5rem 2rem 0.5rem;
+  }
+}

@@ -5,14 +5,40 @@
   background-color: #011526aa;
   color: rgba(255, 255, 255, 0.74);
   font-family: "Roboto";
-  width: 100%;
+  width: 100vw;
   max-width: 1250px;
   height: fit-content;
 }
-.filters_buttons {
+.filters_buttons,
+.order_buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 40%;
 }
 
+.filters_buttons {
+  width: 20%;
+}
+.order_buttons {
+  width: 30%;
+}
+.filter_selects {
+  width: 50%;
+}
+
+@media only screen and (max-width: 991px) {
+  .filters {
+    width: 100%;
+    flex-direction: column;
+    padding: 3px;
+    margin: auto;
+  }
+  .filters_buttons,
+  .order_buttons {
+    display: none;
+  }
+  .filter_selects {
+    width: 100%;
+  }
+}

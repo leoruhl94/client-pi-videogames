@@ -18,8 +18,14 @@
   font-weight: 600;
 }
 
-.nav{
+.nav {
   margin: 0 2rem;
   min-width: fit-content;
   font-family: "Roboto";
+}
+.button_menu {
+  min-width: fit-content;
+  color: #05dbf2;
+  font-size: 2rem;
+  display: block;
 }

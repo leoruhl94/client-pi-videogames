@@ -5,7 +5,7 @@
   background-color: #02010f;
   height: 100px;
   width: 100%;
-  padding: 0 7%;
+  padding: 1% 5% 0 5%;
   margin: auto;
 }
 
@@ -15,11 +15,110 @@
   font-size: 4rem;
   font-weight: 600;
 }
-.logo_header{
- background-image: url('../../assets/images/logo_miniatura.jpg');
- background-size: cover;
- background-repeat: no-repeat;
- background-attachment: fixed;
- height: 100px;
- z-index: 1;
+.logo_header {
+  background-image: url("../../assets/images/logo_miniatura.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100px;
+  z-index: 1;
+}
+
+.hed-1,
+.hed-2,
+.hed-3 {
+  display: flex;
+  align-items: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 768px) {
+  .hed-1 {
+    width: 100%;
+    justify-content: center;
+    padding-top: 5px;
+  }
+  .hed-2,
+  .hed-3 {
+    display: none;
+  }
+
+  .logo_header {
+    height: 65px;
+  }
+  .main-header {
+    height: 70px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {
+  .logo_header {
+    height: 75px;
+  }
+  .main-header {
+    height: 80px;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .hed-1 {
+    width: fit-content;
+    justify-content: flex-start;
+  }
+  .hed-2 {
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .hed-2 .searchbar_input {
+    height: 40px;
+    width: 90%;
+  }
+  .hed-2 .searchbar_button {
+    font-size: 20px;
+  }
+  .hed-2 .searchbar {
+    justify-content: flex-end;
+  }
+  .hed-3 {
+    display: none;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hed-1 {
+    width: 25%;
+    justify-content: flex-start;
+  }
+  .hed-2 {
+    justify-content: center;
+    width: 35%;
+  }
+  .hed-2 .searchbar_input {
+    height: 40px;
+    width: 100%;
+  }
+  .hed-2 .searchbar_button {
+    font-size: 20px;
+  }
+
+  .hed-3 {
+    justify-content: flex-end;
+    width: 40%;
+  }
+  .logo_header {
+    height: 90px;
+  }
+  .main-header {
+    height: 100px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1100px) {
+  .hed-2 {
+    width: 40%;
+  }
+  .hed-3 {
+    width: 35%;
+  }
 }

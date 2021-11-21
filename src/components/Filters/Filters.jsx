@@ -22,11 +22,11 @@ export const Filters = () => {
 
   const resetPath = (value) => {
     history.push("/home");
-  }
+  };
 
   return (
     <section className="filters">
-      <div className="filters_buttons">
+      <div className="order_buttons">
         <ButtonDispatch
           icon="refresh"
           name={RESET}
@@ -64,7 +64,8 @@ export const Filters = () => {
           action={sortGames}
           active={order === MAYOR}
         />
-
+      </div>
+      <div className="filters_buttons">
         <ButtonDispatch
           text="ALL"
           name={FROM}
@@ -87,8 +88,9 @@ export const Filters = () => {
           active={from === FROM_API}
         />
       </div>
-
-      <WidgetFilterGenres />
+      <div className="filter_selects">
+        <WidgetFilterGenres />
+      </div>
     </section>
   );
 };

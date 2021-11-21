@@ -37,9 +37,9 @@ export const WidgetFilterGenres = () => {
   };
   return (
     <section className="filter_bar_genres">
-      <div className="dropdown">
+      <div className="dropdown button_genres">
         <button type="button" className="dropbtn">
-          <span className="dropbtn_text">Generos</span>
+          <span className="dropbtn_text">Genres</span>
           <span className="dropbtn_icon">
             <Icon svg="arrowDown" title="arrowDown" />
           </span>

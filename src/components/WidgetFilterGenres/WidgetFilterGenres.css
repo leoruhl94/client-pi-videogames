@@ -1,12 +1,11 @@
 .filter_bar_genres {
   display: flex;
   flex-direction: row;
-  width: 60%;
-  margin: 0 2rem;
+  width: 100%;
 }
 .filter_genres_selected {
-  width: 70%;
-  margin-left: 1rem;
+  width: 100%;
+  padding-left: 1rem;
   overflow-x: auto;
   display: flex;
   flex-direction: row;
@@ -32,3 +31,7 @@
   background: #0000005d;
   border-radius: 4px;
 }
+.button_genres{
+  min-width: 110px;
+}
+

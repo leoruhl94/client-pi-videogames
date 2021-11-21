@@ -8,7 +8,7 @@
   height: 250px;
   margin-right: 10px;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 2rem;
   cursor: pointer;
   transition: 450ms all;
 }
@@ -97,4 +97,27 @@
   margin: 0.2rem 0.5rem;
   padding: 0 0.5rem;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+  .game-card {
+    border-radius: 10px;
+    width: 150px;
+    height: 175px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .game-card:hover {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    z-index: 1;
+  }
+  .game-card_details {
+    align-items: center;
+  }
+  .game-card_img {
+    width: 150px;
+    height: 175px;
+  }
 }

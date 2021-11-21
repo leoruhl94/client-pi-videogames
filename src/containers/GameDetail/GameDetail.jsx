@@ -5,6 +5,7 @@ import { Loading } from "../../components/Loading/Loading";
 import { Header } from "../../components/Header/Header";
 import "./GameDetail.css";
 import axios from "axios";
+import { BottomBar } from "../../components/BottomBar/BottomBar";
 
 export const GameDetail = () => {
   const [game, setGame] = useState(null);
@@ -93,6 +94,7 @@ export const GameDetail = () => {
             <Loading />
           )}
         </div>
+        <BottomBar/>
       </div>
     </>
   );

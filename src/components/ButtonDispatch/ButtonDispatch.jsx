@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import Icon from "../../assets/Icon/Icon";
 
 export const ButtonDispatch = ({
+  classes,
   active,
   icon,
   text,
@@ -21,7 +22,7 @@ export const ButtonDispatch = ({
   return (
     <button
       key={value}
-      className={`button_distpach ${active && "button_dispatch_active"}`}
+      className={`button_distpach ${active && "button_dispatch_active"} ${classes}`}
       type="button"
       value={value}
       name={name}
