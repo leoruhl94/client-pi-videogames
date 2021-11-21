@@ -134,7 +134,7 @@ export const AddGame = () => {
                 <FormInputTextArea
                   label="Description: "
                   name="description"
-                  placeholder="Añande una descripcion aqui..."
+                  placeholder="Add a description here ..."
                   handler={handleOnChange}
                   msjError="Required"
                   validation={validateText}

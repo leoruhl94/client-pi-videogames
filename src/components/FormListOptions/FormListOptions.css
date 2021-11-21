@@ -36,7 +36,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #5f5f5f70;
+  background-color: #5f5f5fc7;
   max-height: 20rem;
   overflow-y: auto;
   z-index: 2;

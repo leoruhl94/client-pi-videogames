@@ -125,8 +125,8 @@
   .addGame_form {
     min-width: 300px;
   }
-  .addGame_inputs {
-    padding-right: 0;
+  .addGame_inputs .input-textarea-component textarea{
+    height: 100px;
   }
   .addGame_preview_image_2 {
     display: none;
@@ -156,6 +156,9 @@
   .addGame_date {
     width: 60%;
   }
+  .addGame_inputs {
+    padding-right: 0;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -166,9 +169,7 @@
   .addGame_filters .addGame_filter_input {
     width: 100%;
   }
-  .addGame_inputs {
-    padding-right: 0;
-  }
+
 
   .addGame_goback {
     right: 2rem;

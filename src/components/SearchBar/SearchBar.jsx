@@ -26,7 +26,7 @@ export const SearchBar = () => {
     <form onSubmit={onSubmit} className="searchbar">
       <input
         type="text"
-        placeholder="¿que estas buscando?"
+        placeholder="Search..."
         value={search}
         onChange={onChange}
         className="searchbar_input"
