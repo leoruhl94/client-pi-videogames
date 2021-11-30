@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d9fbdb59.chunk.css",
+    "main.js": "/static/js/main.b42b9f66.chunk.js",
+    "main.js.map": "/static/js/main.b42b9f66.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e2889d96.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e2889d96.js.map",
+    "static/js/2.20d04a9a.chunk.js": "/static/js/2.20d04a9a.chunk.js",
+    "static/js/2.20d04a9a.chunk.js.map": "/static/js/2.20d04a9a.chunk.js.map",
+    "static/js/3.eda1dcbb.chunk.js": "/static/js/3.eda1dcbb.chunk.js",
+    "static/js/3.eda1dcbb.chunk.js.map": "/static/js/3.eda1dcbb.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.d9fbdb59.chunk.css.map": "/static/css/main.d9fbdb59.chunk.css.map",
+    "static/js/2.20d04a9a.chunk.js.LICENSE.txt": "/static/js/2.20d04a9a.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/BrutalType-Medium.cb537a4d.woff",
+    "static/media/Home.css": "/static/media/background_09.1b5a7703.jpg",
+    "static/media/Landing.css": "/static/media/background_1.f4b496e0.jpg",
+    "static/media/Favorites.css": "/static/media/background_10.b1ada80e.jpg",
+    "static/media/GameDetail.css": "/static/media/background_4.5ea8b38d.jpg",
+    "static/media/AddGame.css": "/static/media/background_5.961692b6.jpg",
+    "static/media/Redirect404.css": "/static/media/background_7.e3113e96.jpg",
+    "static/media/Header.css": "/static/media/logo_miniatura.7f99afa9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e2889d96.js",
+    "static/js/2.20d04a9a.chunk.js",
+    "static/css/main.d9fbdb59.chunk.css",
+    "static/js/main.b42b9f66.chunk.js"
+  ]
+}
